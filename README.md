@@ -14,9 +14,25 @@ Validators usage
         public function validation()
         {
             $this->validate(new \Skp\Mvc\Model\Validator\LengthValidator(array(
-                'field' => 'total',
-                'min'   => 1,
-                'max'   => 10
+                'field' => 'age',
+                'min'   => 18,
+                'max'   => 25
+            )));
+
+            return $this->validationHasFailed() != true;
+        }
+
+    }
+
+### AtLeastOneValidator
+
+    class Customers extends \Phalcon\Mvc\Model
+    {
+
+        public function validation()
+        {
+            $this->validate(new \Skp\Mvc\Model\Validator\AtLeastOne(array(
+                'fields' => array('age', 'name', 'email')
             )));
 
             return $this->validationHasFailed() != true;
