@@ -14,9 +14,9 @@ Validators usage
         public function validation()
         {
             $this->validate(new \Skp\Mvc\Model\Validator\LengthValidator(array(
-                    'field' => 'total',
-                    'min'   => 1,
-                    'max'   => 10
+                'field' => 'total',
+                'min'   => 1,
+                'max'   => 10
             )));
 
             return $this->validationHasFailed() != true;
