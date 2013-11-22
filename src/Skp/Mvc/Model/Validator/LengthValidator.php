@@ -10,7 +10,7 @@ class LengthValidator extends Validator implements ValidatorInterface
     public function validate($model)
     {
         $field = $this->getOption('field');
-        $value = (property_exists($this, $field)) ? $model->$field : false;
+        $value = (property_exists($model, $field)) ? $model->$field : false;
 
         if ($this->getOption('min') == '' && $this->getOption('max') == '') {
             throw new \InvalidArgumentException('min or max is required for this validator');
