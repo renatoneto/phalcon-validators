@@ -39,3 +39,19 @@ Validators usage
         }
 
     }
+
+### CpfValidator
+
+    class Customers extends \Phalcon\Mvc\Model
+    {
+
+        public function validation()
+        {
+            $this->validate(new \Skp\Mvc\Model\Validator\CpfValidator(array(
+                'field' => 'cpf'
+            )));
+
+            return $this->validationHasFailed() != true;
+        }
+
+    }
